@@ -25,7 +25,7 @@ SECRET_KEY = 'q9^#1kq0aiwy1n_0-8o(s28bk-8bw@iazjhad)9oy+w8-r1hj%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['resumepradip.herokuapp.com/','127.0.0.1']
+ALLOWED_HOSTS = ['resumepradip.herokuapp.com','127.0.0.1']
 
 
 # Application definition
