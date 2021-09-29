@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'q9^#1kq0aiwy1n_0-8o(s28bk-8bw@iazjhad)9oy+w8-r1hj%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['resumepradip.herokuapp.com/','127.0.0.1']
 
@@ -90,9 +90,12 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age = 600)
+DATABASES['default'].update(db_from_env)
 import os
 
-#
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',

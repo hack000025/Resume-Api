@@ -1,1 +1,1 @@
-web: gunicorn ResumePradeep.wsgi --log-file
+web: gunicorn ResumePradeep.wsgi --log-file -
