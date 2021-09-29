@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'q9^#1kq0aiwy1n_0-8o(s28bk-8bw@iazjhad)9oy+w8-r1hj%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['resumepradip.herokuapp.com/','127.0.0.1']
 
 
 # Application definition
@@ -79,25 +79,25 @@ WSGI_APPLICATION = 'ResumePradeep.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'cv',
-#         'USER': 'pradipnishad',
-#         'PASSWORD': 'api',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
-import os
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'resttestapi',
+        'USER': 'pradipnishad',
+        'PASSWORD': 'api',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
+import os
+
+#
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 
 
