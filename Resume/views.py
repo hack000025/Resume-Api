@@ -29,7 +29,7 @@ class ProfileListCreateAPIView (ListCreateAPIView ):
 
 class ProfileDestroyAPIView(DestroyAPIView):
     def delete(self, request, id):
-        permission_classes = [IsAdminUser,]
+#         permission_classes = [IsAdminUser,]
         authentication_classes =[BasicAuthentication,]
         idno = models.Profile.objects.filter(id=id)
         if len(idno)==0:
@@ -40,7 +40,7 @@ class ProfileDestroyAPIView(DestroyAPIView):
 
 class EducationAPIView(APIView):
     authentication_classes =[BasicAuthentication,]
-    permission_classes = [IsAdminUser,]
+#     permission_classes = [IsAdminUser,]
     def get(self,request,*args,**kwarg):
         qs = Education.objects.all()
         serializer = EducationSerializer(qs,many = True)
