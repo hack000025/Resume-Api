@@ -28,8 +28,7 @@ class ProfileListCreateAPIView (ListCreateAPIView ):
 
 class ProfileDestroyAPIView(DestroyAPIView):
     def delete(self, request, id):
-
-         authentication_classes =[BasicAuthentication,]
+        authentication_classes =[BasicAuthentication,]
         idno = models.Profile.objects.filter(id=id)
         if len(idno)==0:
             return Response({'message':'Profile not found'}, status=400)
@@ -38,8 +37,7 @@ class ProfileDestroyAPIView(DestroyAPIView):
 
 
 class EducationAPIView(APIView):
-     authentication_classes =[BasicAuthentication,]
-
+    authentication_classes =[BasicAuthentication,]
     def get(self,request,*args,**kwarg):
         qs = Education.objects.all()
         serializer = EducationSerializer(qs,many = True)
@@ -47,7 +45,7 @@ class EducationAPIView(APIView):
 
 
 class ExperienceAPIView(APIView):
-     authentication_classes =[BasicAuthentication,]
+    authentication_classes =[BasicAuthentication,]
     def get(self,request,*args,**kwarg):
         qs = Experience.objects.all()
         serializer = ExperienceSerializer(qs,many = True)
@@ -56,7 +54,7 @@ class ExperienceAPIView(APIView):
 
 
 class ProjectsAPIView(APIView):
-     authentication_classes =[BasicAuthentication,]
+    authentication_classes =[BasicAuthentication,]
     def get(self,request,*args,**kwarg):
         qs = Projects.objects.all()
         serializer = ProjectSerializer(qs,many = True)
@@ -65,14 +63,14 @@ class ProjectsAPIView(APIView):
 
 
 class CertificationAPIView(APIView):
-     authentication_classes =[BasicAuthentication,]
+    authentication_classes =[BasicAuthentication,]
     def get(self,request,*args,**kwarg):
         qs = Certification.objects.all()
         serializer = CertificationSerializer(qs,many = True)
         return Response(serializer.data,status=200)
 
 class SkillsAPIView(APIView):
-     authentication_classes =[BasicAuthentication,]
+    authentication_classes =[BasicAuthentication,]
     def get(self,request,*args,**kwargs):
         qs = Skills.objects.all()
         serializer = SkillsSerializers(qs,many = True)
